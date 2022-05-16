@@ -1,0 +1,16 @@
+{
+  "name": "calculators",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "ts-node": "ts-node",
+    "calculateBMI": "ts-node bmi.ts",
+    "calculateExercises": "ts-node exercises.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.33"
+  },
+  "author": "Vertti Viitanen",
+  "license": "ISC"
+}
