@@ -1,4 +1,4 @@
-import calculateExercises from './exercise'
+import calculateExercises from './exercise';
 
 interface ExerciseValues {
     target: number,
@@ -22,11 +22,11 @@ const parseExerciseArguments = (args: Array<string>): ExerciseValues => {
         target: target,
         exercises: exercises
     });
-}
+};
 
 try {
     const exerciseValues = parseExerciseArguments(process.argv);
-    console.log(calculateExercises(exerciseValues.target, exerciseValues.exercises))
+    console.log(calculateExercises(exerciseValues.target, exerciseValues.exercises));
 } catch (error: unknown) {
     let errorMessage = 'Something bad happened.';
     if (error instanceof Error) {

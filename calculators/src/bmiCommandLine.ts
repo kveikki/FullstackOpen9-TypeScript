@@ -1,4 +1,4 @@
-import calculateBmi from './bmi'
+import calculateBmi from './bmi';
 
 interface BMIValues {
     height: number,
@@ -14,11 +14,11 @@ const parseBmiArguments = (args: Array<string>): BMIValues => {
         return {
             height: Number(args[2]),
             weight: Number(args[3])
-        }
+        };
     } else {
         throw new Error('Provided values were not numbers!');
     }
-}
+};
 
 try {
     const {height, weight} = parseBmiArguments(process.argv);

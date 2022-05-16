@@ -20,7 +20,7 @@ export default function calculateExercises(target: number, exercises: Array<numb
 
     let ratingDescription : string;
     switch (rating){
-        case 1: ratingDescription = ' lot of improvements can be made'; break;
+        case 1: ratingDescription = 'bad'; break;
         case 2: ratingDescription = 'not too bad but could be better'; break;
         default: ratingDescription = 'well done'; break;
     }
@@ -33,5 +33,5 @@ export default function calculateExercises(target: number, exercises: Array<numb
         ratingDescription,
         target,
         average
-    }
+    };
 }
