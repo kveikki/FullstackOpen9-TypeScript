@@ -47,6 +47,7 @@ const rawData = [
 const patientData: Array<Patient> = rawData.map(obj => {
     const object = toNewPatient(obj) as Patient;
     object.id = obj.id;
+    object.entries = [];
     return object;
 });
 

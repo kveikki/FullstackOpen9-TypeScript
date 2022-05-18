@@ -30,7 +30,8 @@ export const toNewPatient = (object: any)
         dateOfBirth: parseField(object.dateOfBirth, "Incorrect or missing date of birth"),
         ssn: parseField(object.ssn, "Incorrect or missing social security number"),
         gender: parseGender(object.gender),
-        occupation: parseField(object.occupation, "Incorrect or missing occupation")
+        occupation: parseField(object.occupation, "Incorrect or missing occupation"),
+        entries: []
     };
 
     return newPatient;
