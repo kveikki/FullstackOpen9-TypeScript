@@ -7,7 +7,7 @@ import { updatePatient, useStateValue } from "../state";
 import { Gender, Patient } from "../types";
 import MaleIcon from '@mui/icons-material/Male';
 import FemaleIcon from '@mui/icons-material/Female';
-
+import EntryList from "./EntryList";
 
 const PatientInfoPage = () => {
     const [{ patients }, dispatch] = useStateValue();
@@ -42,14 +42,15 @@ const PatientInfoPage = () => {
                 marginBottom: "0.5em",
                 fontFamily: 'Helvetica Neue'
             }}>
-                <b> {patient.name} </b>
+                <b> <br />{patient.name} </b>
                 {(() => {
                     if (patient.gender === Gender.Male) return (<MaleIcon />);
                     if (patient.gender === Gender.Female) return (<FemaleIcon />);
                 })()}
             </Typography>
             <div>ssn: {patient.ssn}</div>
-            <div>occupation: {patient.occupation}</div>
+            <div>occupation: {patient.occupation} </div>
+            <EntryList entries={patient.entries}/>
         </div>
     );
 };
