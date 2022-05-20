@@ -1,6 +1,6 @@
 import data from '../../data/patients';
 import { v4 as uuid } from 'uuid';
-import { NewPatient, Patient, PublicPatient } from '../types';
+import { Entry, NewEntry, NewPatient, Patient, PublicPatient } from '../types';
 
 
 let patients: Array<Patient> = data;
@@ -14,7 +14,6 @@ const getPatient = (id: string): Patient | undefined => {
 };
 
 const addPatient = (newPatient: NewPatient): Patient => {
-
     const id = uuid();
 
     const patient: Patient = {
@@ -27,8 +26,22 @@ const addPatient = (newPatient: NewPatient): Patient => {
     return patient;
 };
 
+const addEntry = (patient: Patient, newEntry: NewEntry): Entry => {
+    const id = uuid();
+
+    const entry: Entry = {
+        id: id,
+        ...newEntry
+    };
+    console.log(entry);
+
+    patient.entries = patient.entries.concat(entry);
+    return entry;
+};
+
 export default {
     getPatients,
     getPatient,
-    addPatient
+    addPatient,
+    addEntry
 };

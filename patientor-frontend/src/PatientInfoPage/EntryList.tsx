@@ -6,14 +6,14 @@ import {HealthCheckEntryListing, HospitalEntryListing, OccupationalHealthcareEnt
 const EntryList = ({ entries }: { entries: Entry[] }) => {
     if (!entries || entries.length === 0) return null;
 
-    const getEntrySpecifics = ( entry: Entry ) => {
+    const getEntryListing = ( entry: Entry ) => {
         switch (entry.type) {
             case "HealthCheck":
-                return <HealthCheckEntryListing entry={entry}/>;
+                return <HealthCheckEntryListing key={entry.id} entry={entry}/>;
             case "Hospital":
-                return <HospitalEntryListing entry={entry}/>;
+                return <HospitalEntryListing key={entry.id} entry={entry}/>;
             case "OccupationalHealthCare":
-                return <OccupationalHealthcareEntryListing entry={entry}/>;
+                return <OccupationalHealthcareEntryListing key={entry.id} entry={entry}/>;
             default:
                 assertNever(entry);
         }
@@ -27,7 +27,7 @@ const EntryList = ({ entries }: { entries: Entry[] }) => {
         }}>
             <b><br />entries</b>
         </Typography>
-        {entries.map(entry => getEntrySpecifics(entry))}
+        {entries.map(entry => getEntryListing(entry))}
     </div>;
 };
 
